@@ -20,6 +20,7 @@ use crate::totp::TOTP;
 ///
 /// [RFC6238]: https://datatracker.ietf.org/doc/html/rfc6238
 #[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub enum MacDigest {
     SHA1,
     SHA256,

@@ -17,6 +17,7 @@ use crate::util::{base32_decode, get_code, hash_generic, MacDigest};
 ///
 /// [RFC6238]: https://datatracker.ietf.org/doc/html/rfc6238
 #[derive(Debug, Clone, Hash)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct TOTP {
     /// The secret key used in the HMAC process.
     ///
